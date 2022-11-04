@@ -1,0 +1,54 @@
+-- CREATE TABLE
+CREATE TABLE tb_employees
+(
+    employee_id int(6) PRIMARY KEY,
+    employee_name VARCHAR(255),
+    employee_manager_id int(6) NULL
+);
+
+-- CREATE PROCEDURE INSERT EMPLOYEE
+CREATE PROCEDURE InsertEmployee(
+	employee_id int(6),
+    employee_name VARCHAR(255),
+    employee_manager_id int(6)
+)
+BEGIN
+	INSERT INTO tb_employees VALUES(employee_id, employee_name, employee_manager_id);
+END;
+
+TRUNCATE TABLE tb_employees;
+
+-- CREATE PROCEDURE INSERT BULK EMPLOYEE
+CREATE PROCEDURE InsertBulkEmployee()
+BEGIN
+	CALL InsertEmployee(1,'Mary',null);
+	CALL InsertEmployee(2,'Fred',1);
+	CALL InsertEmployee(3,'Mary',2);
+	CALL InsertEmployee(4,'Vilo',3);
+	CALL InsertEmployee(5,'Mora',2);
+	CALL InsertEmployee(6,'Bill',5);
+	CALL InsertEmployee(7,'John',6);
+	CALL InsertEmployee(8,'George',1);
+	CALL InsertEmployee(9,'Chilla',8);
+	CALL InsertEmployee(10,'Moya',8);
+	CALL InsertEmployee(11,'Silvy',1);
+	CALL InsertEmployee(12,'Hans',11);
+	CALL InsertEmployee(13,'Michael',11);
+	CALL InsertEmployee(14,'Richard',11);
+END;
+
+CALL InsertBulkEmployee();
+
+-- CREATE PROCEDURE GET EMPLOYEE WITH MANAGER
+CREATE PROCEDURE GetEmployeeWithManager()
+BEGIN
+	SELECT DISTINCT 
+		child.employee_id AS employee_id, 
+		child.employee_name AS employee_name, 
+		parent.employee_name AS manager_name
+	FROM tb_employees child
+	LEFT JOIN tb_employees parent
+	ON child.employee_manager_id = parent.employee_id; 
+END;
+
+CALL GetEmployeeWithManager();

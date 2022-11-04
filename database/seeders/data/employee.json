@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "name": "Mary",
+        "manager_id": null
+    },
+    {
+        "id": 2,
+        "name": "Fred",
+        "manager_id": 1
+    },
+    {
+        "id": 3,
+        "name": "Mary",
+        "manager_id": 2
+    },
+    {
+        "id": 4,
+        "name": "Vilo",
+        "manager_id": 3
+    },
+    {
+        "id": 5,
+        "name": "Mora",
+        "manager_id": 2
+    },
+    {
+        "id": 6,
+        "name": "Bil",
+        "manager_id": 5
+    },
+    {
+        "id": 7,
+        "name": "John",
+        "manager_id": 6
+    },
+    {
+        "id": 8,
+        "name": "George",
+        "manager_id": 1
+    },
+    {
+        "id": 9,
+        "name": "Chilla",
+        "manager_id": 8
+    },
+    {
+        "id": 10,
+        "name": "Moya",
+        "manager_id": 8
+    },
+    {
+        "id": 11,
+        "name": "Silvy",
+        "manager_id": 1
+    },
+    {
+        "id": 12,
+        "name": "Hans",
+        "manager_id": 11
+    },
+    {
+        "id": 13,
+        "name": "Michael",
+        "manager_id": 11
+    },
+    {
+        "id": 14,
+        "name": "Richard",
+        "manager_id": 11
+    }
+]
